@@ -14,7 +14,7 @@ exports.sendPasswordChangeEmail = function sendpasswordChangeFunction(email, pas
       from: 'notifications.drip@gmail.com',
       subject: 'DRIP Password Change',
       text: '?',    //This field does not seem to appear on emails
-      html: "<strong>You have requested a password change</strong><br><p>Click this link:<br>  <a href=\"http://leia.cs.spu.edu:3001/passwordchange?hash=" + passHash + "\">Change</a></p>"
+      html: "<strong>You have requested a password change</strong><br><p>Click this link:<br>  <a href=\"https://drip-web-app.herokuapp.com/passwordchange?hash=" + passHash + "\">Change</a></p>"
       ,     //End html words in text box
     };
     //ES8
