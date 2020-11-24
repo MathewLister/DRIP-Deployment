@@ -74,8 +74,3 @@ app.use(function(req, res) {
 
 app.listen(port)
 console.log('Listening on port ' + port)
-console.log(process.env.SENDGRID_API_KEY)
-console.log(process.env.DB_HOST)
-console.log(process.env.DB_USER)
-console.log(process.env.DB_PASS)
-console.log(process.env.DB_NAME)
