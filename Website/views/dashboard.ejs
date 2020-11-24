@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Users main dashboard/home">
+    <meta name="Tad, James, Mathew">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <title><%= name %>'s Dashboard</title>
+    <link rel="canonical" href="//getbootstrap.com/docs/4.0/examples/dashboard/">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link href="http://leia.cs.spu.edu:3001/source/css/min" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="http://leia.cs.spu.edu:3001/source/css/dash" rel="stylesheet">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/index">DRIP</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <form action="/logout?_method=DELETE" method="POST">
+            <a onclick="this.closest('form').submit();return false;" class="nav-link-signout" style="color: white;" type="submit">Sign out</a>
+          </form>
+        </li>
+      </ul>
+    </nav>
+    <!--Nav bar-->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="shadow col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/users/dashboard">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../users/plants">
+                  <span><img src="http://leia.cs.spu.edu:3001/source/plant" alt="Plant Icon" onMouseOver="this.style.color='#0F0'"
+                  onMouseOut="this.style.color='#00F'" class="feather plantIcon"></span>
+                  Plants
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/devices">
+                  <span data-feather="cpu"></span>
+                  Devices
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/account">
+                  <span data-feather="users"></span>
+                  Account
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!--Body-->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
+            <h1 class="mb-3">Plants Tracked In Last 24 Hours</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <!--For future updates graphing intervals-->
+              <!--
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            -->
+            <!--<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+              <!--<button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span data-feather="calendar"></span>
+                <% include ./partials/graphInterval %>
+              </button>-->
+            </div>
+          </div>
+          <% include ./partials/multipleCanvas %>
+          <!-- <canvas class="my-4" id="myChart" width="900" height="380"></canvas> -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="http://leia.cs.spu.edu:3001/source/js/popper"></script>
+    <script src="http://leia.cs.spu.edu:3001/source/js/min"></script>
+    
+    <!--Our JS (We may not need this..?Seems to work without it so far)-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <!-- Tad's Test Graphs -->
+    <canvas id="myChart"></canvas>
+    <script src="//cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    
+    <% include ./partials/chartData %>
+
+
+<!-- End of Tad's Test Graphs -->
+  </body>
+</html>
