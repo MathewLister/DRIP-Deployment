@@ -16,7 +16,7 @@ const bodyParser = require('body-parser')
 const url = require('url')
 const queryString = require('querystring')
 const key = process.env.SENDGRID_API_KEY
-const port = 3001
+const port = process.env.PORT || 3001
 const passport = require('passport')
 
 
