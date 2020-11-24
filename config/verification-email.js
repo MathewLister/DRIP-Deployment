@@ -1,6 +1,8 @@
-exports.sendVerificationEmail = function sendVerificationEmailFunction(email, accHash) {
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config() //Loads in process variables from .env
+}
 
-  require('dotenv').config()
+exports.sendVerificationEmail = function sendVerificationEmailFunction(email, accHash) {
   const key = process.env.SENDGRID_API_KEY
 
   const sgMail = require('@sendgrid/mail');

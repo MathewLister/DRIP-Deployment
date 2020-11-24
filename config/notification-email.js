@@ -1,6 +1,10 @@
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config() //Loads in process variables from .env
+}
+
 exports.sendNotificationEmail = function sendNotificationEmailFunction(email) {
 
-  require('dotenv').config()
+  //require('dotenv').config()
   const key = process.env.SENDGRID_API_KEY
 
   const sgMail = require('@sendgrid/mail');

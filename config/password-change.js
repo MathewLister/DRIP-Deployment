@@ -1,6 +1,10 @@
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config() //Loads in process variables from .env
+}
+
 exports.sendPasswordChangeEmail = function sendpasswordChangeFunction(email, passHash) {
 
-    require('dotenv').config()
+    //require('dotenv').config()
     const key = process.env.SENDGRID_API_KEY
   
     const sgMail = require('@sendgrid/mail');
