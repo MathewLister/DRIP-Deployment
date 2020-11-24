@@ -1,8 +1,8 @@
-if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').config() //Loads in process variables from .env
-}
+// if(process.env.NODE_ENV !== 'production'){
+//     require('dotenv').config() //Loads in process variables from .env
+// }
 
-//require('dotenv').config()
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const flash = require('express-flash')
@@ -74,3 +74,8 @@ app.use(function(req, res) {
 
 app.listen(port)
 console.log('Listening on port ' + port)
+console.log(process.env.SENDGRID_API_KEY)
+console.log(process.env.DB_HOST)
+console.log(process.env.DB_USER)
+console.log(process.env.DB_PASS)
+console.log(process.env.DB_NAME)

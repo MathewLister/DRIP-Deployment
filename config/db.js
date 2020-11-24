@@ -3,10 +3,10 @@ var con
 
 exports.connect = function ConnectionHandler(done){
     con = mysql.createConnection({
-        host: "leia.cs.spu.edu",
-        user: "",
-        password: "",
-        database: ""
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME
     });
     done();
 }
