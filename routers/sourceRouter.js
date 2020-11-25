@@ -4,27 +4,26 @@ var path = require('path')
 const methodOverride = require('method-override')
 
 router.use(methodOverride('_method'))
-router.use(express.static(__dirname + '/public/assets')) //Global variable so we can access stuff in /public
-// var dir = "/public/assets"
+// var __dirname = "/public/assets"
 
 router.get('/css/min', (req, res) => {
-    res.sendFile(__dirname + '/bootstrap-4.4.1/dist/css/bootstrap.min.css')
+    res.sendFile(__dirname + '/assets/bootstrap-4.4.1/dist/css/bootstrap.min.css')
 })
 
 router.get('/css/dash', (req, res) => {
-    res.sendFile(__dirname + '/css/dashboard.css')
+    res.sendFile(__dirname + '/assets/css/dashboard.css')
 })
 
 router.get('/js/popper', (req, res) => {
-    res.sendFile(__dirname + '/js/popper.min.js')
+    res.sendFile(__dirname + '/assets/js/popper.min.js')
 })
 
 router.get('/js/min', (req, res) => {
-    res.sendFile(__dirname + '/bootstrap-4.4.1/dist/js/bootstrap.min.js')
+    res.sendFile(__dirname + '/assets/bootstrap-4.4.1/dist/js/bootstrap.min.js')
 })
 
 router.get('/plant', (req, res) => {
-    res.sendFile(__dirname + '../images/Icons/plantIcon.svg')
+    res.sendFile('/home/bettagj/GMS/Website/public/images/Icons/plantIcon.svg')
 })
 
 module.exports = router
