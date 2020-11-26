@@ -16,7 +16,57 @@
   
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/index">DRIP</a>
+    <!-- Mobile Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top d-inline-block d-md-none" id="mainNav">
+      <div class="shadow">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <div class="clearfix navbar-brand mr-0 ">
+              <li class="nav-item float-left pl-1">
+                <a class="nav-link" href="/index">DRIP</a>
+              </li>
+              <li class="nav-item float-right pr-1">
+                <form action="/logout?_method=DELETE" method="POST">
+                  <a onclick="this.closest('form').submit();return false;" class="nav-link" type="submit">Sign out</a>
+                </form>
+              </li>
+            </div>
+            <li class="nav-item">
+              <a class="nav-link active" href="/users/dashboard">
+                <span data-feather="home"></span>
+                Dashboard <span class="sr-only">(current)</span>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/plants">
+                <span><img src="/images/Icons/plantIcon.svg" alt="Plant Icon"
+                        onMouseOver="this.style.color='#0F0'" onMouseOut="this.style.color='#00F'"
+                        class="feather plantIcon"></span>
+                Plants
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/devices">
+                <span data-feather="cpu"></span>
+                Devices
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/account">
+                <span data-feather="users"></span>
+                Account
+            </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+      <!-- Desktop Navigation -->
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0 d-md-inline-block d-none" href="/index">DRIP</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <form action="/logout?_method=DELETE" method="POST">
@@ -60,7 +110,7 @@
           </div>
         </nav>
         <!--Body-->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 mt-5 mt-md-0">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
             <h1 class="mb-3">Plants Tracked In Last 24 Hours</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
