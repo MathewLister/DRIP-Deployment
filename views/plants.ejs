@@ -123,9 +123,9 @@
                     <table class="shadow table table-striped table-md">
                         <form action="/users/addPlant" method="POST">
                             <tr>
-                                <th><input type="text" class="form-control" name="new_plant_name" id="new_plant_name" placeholder="Name" required></th>
+                                <th><input type="text" class="form-control" name="new_plant_name" id="new_plant_name" placeholder="Name" title="" required></th>
                                 <td style="text-align:left;">
-                                    <input size=1 type="text" class="form-control" name="new_min" id="new_min" placeholder="Min"required>
+                                    <input size=1 type="text" class="form-control" name="new_min" id="new_min" placeholder="Min" data-placement="bottom" title="Enter the minimum water level (0-100) for when to get notified to water your plant - you might need to do some testing to get it just right"required>
                                 </td>
                                 <td colspan="2" style="text-align:right;"><button type="submit" value="Submit"class="btn btn-success">Add Plant</button></td>
                         </form>
@@ -149,6 +149,10 @@
             </script>
         </div>
         <script>
+            /* Emable bootstraps tooltips */
+            $(document).ready(function(){
+                $('input').tooltip();
+            });
              /*Submit form to renamePlant when clicking out of the name input field*/
             function lostFocus(e) {
                 if ($(e).val() !== $(e).siblings('input').val()) {

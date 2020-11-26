@@ -123,8 +123,8 @@
                         <table class="shadow table table table-md">
                             <form action="/users/addDevice" method="POST">
                                 <tr>
-                                    <th><input type="text" class="form-control" name = "new_device_name" id="new_device_name" placeholder="Name" required></th>
-                                    <td><input type="text" class="form-control" name = "new_device_id" id="new_device_id" placeholder="ID" required></td>
+                                    <th><input type="text" class="form-control" name="new_device_name" id="new_device_name" placeholder="Name" title="" required></th>
+                                    <td><input type="text" class="form-control" name="new_device_id" id="new_device_id" placeholder="ID" data-placement="bottom" title="Use your devices unique ID to pair your sensor to your account" required></td>
                                     <td colspan="2" style="text-align:right;"><button type="submit" value="Submit" class="shadow btn btn-success">Add Device</button></td>
                                 </tr> 
                             </form>
@@ -146,6 +146,10 @@
                 </script>
             </div>
             <script>
+                /* Emable bootstraps tooltips */
+                $(document).ready(function(){
+                    $('input').tooltip();
+                });
                 /* Submit form to renameDevice when clicking out of the name input field*/
                 function lostFocus(e) {
                     if ($(e).val() !== $(e).siblings('input').val()) {
