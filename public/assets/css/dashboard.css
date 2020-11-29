@@ -18,6 +18,21 @@ enable-shadows .shadowed-lg {
   filter: drop-shadow(0.5px 0.5px 0.5px #222);
 }
 
+input {
+  border-radius: 8px !important;
+  transition: all 0.2s ease-out;
+}
+
+input:hover {
+  box-shadow: 9px 13px 11px -6px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+input:focus {
+  box-shadow: 9px 13px 11px -6px rgba(0, 0, 0, 0.4) !important;
+  transform: scale(1.01) !important;
+}
+
 body {
   font-size: 0.875rem;
   font-family: Ubuntu-Regular;
