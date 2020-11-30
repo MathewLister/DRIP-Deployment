@@ -11,7 +11,6 @@ var db = require('./config/db')
 const router = require('./routers/router')
 const userRouter = require('./routers/userRouter.js')
 const piRouter = require('./routers/piRouter')
-const sourceRouter = require('./routers/sourceRouter')
 const bodyParser = require('body-parser')
 const url = require('url')
 const queryString = require('querystring')
@@ -65,8 +64,6 @@ app.use('/', router)
 app.use('/users', userRouter)
 // route all /pi routes through the pi router file piRouter.js
 app.use('/pi', piRouter)
-// route js sources through sourceRouter
-app.use('/source', sourceRouter)
 // handle invalid routes
 app.use(function(req, res) {
   res.redirect('/index')
